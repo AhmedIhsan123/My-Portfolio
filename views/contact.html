@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ahmed Ihsan - Contact Me</title>
+
+		<!-- Link script -->
+		<script src="scripts/contact.js" defer></script>
+
+		<!-- Linking CSS -->
+		<link rel="stylesheet" href="styles/contact.css" />
+
+		<!-- Add favicon -->
+		<!-- <link rel="icon" href="images/favicon.png" /> -->
+	</head>
+	<body>
+		<main>
+			<form id="guest-form" action="confirmation" method="POST">
+				<legend>Contact Form</legend>
+
+				<!-- Basic information fieldset -->
+				<fieldset id="basic-info">
+					<!-- First name -->
+					<div>
+						<label for="fname">First name</label>
+						<span class="error" id="err-fname">*</span>
+						<div>
+							<input type="text" id="fname" name="fname" />
+						</div>
+					</div>
+
+					<!-- Last name -->
+					<div>
+						<label for="lname">Last name</label>
+						<span class="error" id="err-lname">*</span>
+						<div>
+							<input type="text" id="lname" name="lname" />
+						</div>
+					</div>
+
+					<!-- Job Title -->
+					<div>
+						<label for="job-title">Job Title</label>
+						<span class="error" id="err-jtitle">*</span>
+						<div>
+							<input type="text" id="job-title" name="job-title" />
+						</div>
+					</div>
+
+					<!-- Company -->
+					<div>
+						<label for="company">Company</label>
+						<span class="error" id="err-company">*</span>
+						<div>
+							<input type="text" id="company" name="company" />
+						</div>
+					</div>
+
+					<!-- Linkedin URL -->
+					<div>
+						<label for="linkedin">LinkedIn URL</label>
+						<span class="error" id="err-linkedin">*</span>
+						<div>
+							<input type="text" id="linkedin" name="linkedin" />
+						</div>
+					</div>
+
+					<!-- Email Address -->
+					<div>
+						<label for="email">Email Address</label>
+						<span class="error" id="err-email">*</span>
+						<div>
+							<input type="email" id="email" name="email" />
+						</div>
+					</div>
+				</fieldset>
+
+				<!-- Meeting info -->
+				<fieldset id="meeting-info">
+					<!-- Meet -->
+					<div id="meet-box">
+						<div>
+							<label for="meet">How did we meet?</label>
+							<span class="error" id="err-meet">*</span>
+						</div>
+						<select name="meet" id="meet">
+							<option value="" selected disabled>Please select</option>
+							<option value="online">Online</option>
+							<option value="in-person">In-Person</option>
+							<option value="other">Other</option>
+						</select>
+					</div>
+
+					<!-- Other -->
+					<div id="other-box">
+						<label for="other">Other (please specify)</label>
+						<input type="text" name="other" id="other" />
+					</div>
+				</fieldset>
+
+				<!-- Message area -->
+				<fieldset id="submit-info">
+					<!-- Message box -->
+					<label for="message">Message</label>
+					<textarea
+						id="message"
+						name="message"
+						placeholder="Type your message here..."
+					></textarea>
+
+					<!-- Add to mailing -->
+					<div>
+						<div>
+							<input type="checkbox" id="mail-list" name="mail-list" />
+							<label for="mail-list">Please add me to your mailing list!</label>
+						</div>
+
+						<!-- Email format -->
+						<div id="email-format-box">
+							<span>Choose an email format:</span>
+							<label for="html"
+								><input
+									type="radio"
+									name="mail-format"
+									value="html"
+									id="html"
+									class="radio"
+								/><span>HTML</span></label
+							>
+							<label for="text"
+								><input
+									type="radio"
+									name="mail-format"
+									value="text"
+									id="text"
+									class="radio"
+								/><span>Text</span></label
+							>
+							<span class="error" id="err-format">*</span>
+						</div>
+					</div>
+				</fieldset>
+
+				<!-- Submit button -->
+				<button type="submit" id="submit-btn">Submit</button>
+
+				<!-- Github repo link -->
+				<a href="https://github.com/AhmedIhsan123/guestbook" target="_blank"
+					>Github Repository</a
+				>
+			</form>
+		</main>
+	</body>
+</html>
