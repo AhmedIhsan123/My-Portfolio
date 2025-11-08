@@ -25,12 +25,6 @@ document.querySelectorAll('#nav-list a[href^="#"]').forEach((link) => {
 	});
 });
 
-// Toggle button event
-document.getElementById("theme-toggle").addEventListener("click", () => {
-	console.log(0);
-	document.body.classList.toggle("light-mode");
-});
-
 /* ------ Slideshow code ------ */
 // Change slide function
 function changeSlide(slideshowName, n) {

@@ -35,9 +35,15 @@ app.get("/contact", (req, res) => {
 // Define a confirmation root
 app.post("/confirmation", (req, res) => {
 	const guest = req.body;
+	guest.date = new Date();
 	guests.push(guest);
 	console.log(guests);
 	res.render("confirmation");
+});
+
+// Define a admin root
+app.get("/admin", (req, res) => {
+	res.render("admin", { guests });
 });
 
 // Start the server

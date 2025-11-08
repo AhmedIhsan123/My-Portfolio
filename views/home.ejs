@@ -5,26 +5,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ahmed Ihsan - Portfolio</title>
 		<link rel="stylesheet" href="/styles/home.css" />
+		<link rel="stylesheet" href="/styles/style.css" />
 		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 		<script src="/scripts/home.js" defer></script>
 	</head>
 	<body>
-		<header id="header-container">
-			<nav>
-				<ul id="nav-list">
-					<li><a href="#">Home</a></li>
-					<li><a href="#education-section">Education</a></li>
-					<li><a href="#work-section">Work</a></li>
-					<li><a href="#projects-section">Projects</a></li>
-					<hr />
-					<li><a href="/contact">Contact</a></li>
-				</ul>
-			</nav>
-		</header>
+		<!-- Include the header partial -->
+		<%- include('partials/header') %>
 
 		<main>
-			<button id="theme-toggle">🌙</button>
-
 			<section>
 				<h1>Hello, I'm <span id="typed"></span></h1>
 				<p id="welcome-message">
@@ -254,13 +243,7 @@
 				</div>
 			</section>
 		</main>
-		<footer id="footer">
-			<p>© 2025 Ahmed Ihsan — All Rights Reserved</p>
-			<div id="footer-links">
-				<a href="https://github.com/AhmedIhsan123" target="_blank">GitHub</a>
-				<a href="www.linkedin.com/in/ahmed-ihsan" target="_blank">LinkedIn</a>
-				<a href="https://drowz1212.itch.io" target="_blank">itch.io</a>
-			</div>
-		</footer>
+		<!-- Include the footer partial -->
+		<%- include('partials/footer') %>
 	</body>
 </html>

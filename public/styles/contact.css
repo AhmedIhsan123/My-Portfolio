@@ -1,23 +1,4 @@
 /* =======================================
-   THEME VARIABLES — DARK MODE DEFAULT
-======================================= */
-:root {
-	--bg-color: rgb(12, 12, 12);
-	--text-color: white;
-	--card-shadow: rgba(0, 0, 0, 0.8);
-	--hover-shadow-1: rgba(255, 255, 255, 0.3);
-	--hover-shadow-2: rgba(0, 0, 0, 0.15);
-	--subtle-shadow: rgba(0, 0, 0, 0.521);
-	--card-bg-color: rgb(26, 26, 26);
-	--header-bg-color: rgba(26, 26, 26, 0.15);
-	--date-color: gray;
-
-	--complete-color: darkgreen;
-	--ip-color: rgb(141, 141, 0);
-	--ip-color-glow: rgb(206, 206, 0);
-}
-
-/* =======================================
    GLOBAL BASE STYLES
 ======================================= */
 * {
@@ -294,20 +275,6 @@ button#submit-btn:hover {
 
 #footer-links a {
 	font-weight: 300;
-}
-
-/* =======================================
-   Animations
-======================================= */
-@keyframes fadeUp {
-	0% {
-		opacity: 0;
-		transform: translateY(20px); /* starts slightly lower */
-	}
-	100% {
-		opacity: 1;
-		transform: translateY(0); /* ends in place */
-	}
 }
 
 /* RESPONSIVE */
