@@ -30,11 +30,11 @@ body.light-mode {
    GLOBAL BASE STYLES
 ======================================= */
 * {
+	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 100;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 400;
 	color: var(--text-color);
 }
 
@@ -363,16 +363,11 @@ a {
 	align-items: center;
 	gap: 0.5rem;
 	padding: 1.25rem 1rem;
-	margin-top: 3rem;
 	background: var(--card-bg-color);
 	border-top: 1px solid var(--text-color);
 	box-shadow: 5px 5px 5px var(--subtle-shadow);
 	transition: 0.15s ease;
 	text-align: center;
-}
-
-#footer:hover {
-	box-shadow: 0 0 25px var(--hover-shadow-1), 0 0 50px var(--hover-shadow-2);
 }
 
 #footer p {

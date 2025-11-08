@@ -5,29 +5,38 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Ahmed Ihsan - Contact Me</title>
 
-		<!-- Link script -->
+		<link rel="stylesheet" href="/styles/contact.css" />
 		<script src="scripts/contact.js" defer></script>
-
-		<!-- Linking CSS -->
-		<link rel="stylesheet" href="styles/contact.css" />
-
-		<!-- Add favicon -->
-		<!-- <link rel="icon" href="images/favicon.png" /> -->
 	</head>
 	<body>
+		<!-- Page header -->
+		<header id="header-container">
+			<nav>
+				<ul id="nav-list">
+					<li><a href="/">Home</a></li>
+					<li><a href="#education-section">Education</a></li>
+					<li><a href="#work-section">Work</a></li>
+					<li><a href="#projects-section">Projects</a></li>
+					<hr />
+					<li><a href="/contact">Contact</a></li>
+				</ul>
+			</nav>
+		</header>
+
+		<!-- Page main content -->
 		<main>
 			<form id="guest-form" action="confirmation" method="POST">
-				<legend>Contact Form</legend>
+				<legend>Lets connect...</legend>
 
 				<!-- Basic information fieldset -->
 				<fieldset id="basic-info">
 					<!-- First name -->
 					<div>
-						<label for="fname">First name</label>
-						<span class="error" id="err-fname">*</span>
 						<div>
-							<input type="text" id="fname" name="fname" />
+							<label for="fname">First name</label>
+							<span class="error" id="err-fname">*</span>
 						</div>
+						<input type="text" id="fname" name="fname" />
 					</div>
 
 					<!-- Last name -->
@@ -144,12 +153,17 @@
 
 				<!-- Submit button -->
 				<button type="submit" id="submit-btn">Submit</button>
-
-				<!-- Github repo link -->
-				<a href="https://github.com/AhmedIhsan123/guestbook" target="_blank"
-					>Github Repository</a
-				>
 			</form>
 		</main>
+
+		<!-- Page footer -->
+		<footer id="footer">
+			<p>© 2025 Ahmed Ihsan — All Rights Reserved</p>
+			<div id="footer-links">
+				<a href="https://github.com/AhmedIhsan123" target="_blank">GitHub</a>
+				<a href="www.linkedin.com/in/ahmed-ihsan" target="_blank">LinkedIn</a>
+				<a href="https://drowz1212.itch.io" target="_blank">itch.io</a>
+			</div>
+		</footer>
 	</body>
 </html>

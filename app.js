@@ -1,5 +1,5 @@
 // Import statements
-import express from "express";
+import express, { application } from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -23,6 +23,11 @@ app.use(express.static(path.join(__dirname, "public")));
 // Define a default root
 app.get("/", (req, res) => {
 	res.render("home", { message: "Hello World!" });
+});
+
+// Define a contact root
+app.get("/contact", (req, res) => {
+	res.render("contact");
 });
 
 // Start the server
