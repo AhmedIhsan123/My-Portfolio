@@ -56,6 +56,7 @@ main {
 	width: 40%;
 	height: 100%;
 	gap: 2rem;
+	animation: fadeUp 0.25s ease-out forwards;
 }
 
 a {
@@ -209,6 +210,7 @@ select {
 	font-size: 0.8rem;
 	font-weight: 600;
 	margin-left: 0.25rem;
+	visibility: hidden;
 }
 
 #other-box {
@@ -292,6 +294,20 @@ button#submit-btn:hover {
 
 #footer-links a {
 	font-weight: 300;
+}
+
+/* =======================================
+   Animations
+======================================= */
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px); /* starts slightly lower */
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0); /* ends in place */
+	}
 }
 
 /* RESPONSIVE */

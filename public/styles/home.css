@@ -62,6 +62,7 @@ main {
 	padding-bottom: 1rem;
 	width: 40%;
 	gap: 2rem;
+	animation: fadeUp 0.25s ease-out forwards;
 }
 
 a {
@@ -317,6 +318,9 @@ a {
 	animation: fadeEffect 0.7s;
 }
 
+/* =======================================
+   Animations
+======================================= */
 @keyframes fadeEffect {
 	from {
 		opacity: 0.4;
@@ -332,6 +336,17 @@ a {
 	}
 	100% {
 		color: var(--ip-color-glow);
+	}
+}
+
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px); /* starts slightly lower */
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0); /* ends in place */
 	}
 }
 

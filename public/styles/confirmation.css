@@ -1,0 +1,109 @@
+/* =======================================
+   THEME VARIABLES — DARK MODE DEFAULT
+======================================= */
+:root {
+	--bg-color: rgb(12, 12, 12);
+	--text-color: white;
+	--card-shadow: rgba(0, 0, 0, 0.8);
+	--hover-shadow-1: rgba(255, 255, 255, 0.3);
+	--hover-shadow-2: rgba(0, 0, 0, 0.15);
+	--subtle-shadow: rgba(0, 0, 0, 0.521);
+	--card-bg-color: rgb(26, 26, 26);
+	--header-bg-color: rgba(26, 26, 26, 0.15);
+	--date-color: gray;
+
+	--complete-color: darkgreen;
+	--ip-color: rgb(141, 141, 0);
+	--ip-color-glow: rgb(206, 206, 0);
+}
+
+/* =======================================
+   GLOBAL BASE STYLES
+======================================= */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	font-weight: 400;
+	color: var(--text-color);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	gap: 4rem;
+	height: 100vh;
+	max-height: 100%;
+	background: var(--bg-color);
+	transition: background 0.3s ease, color 0.3s ease;
+	animation: fadeUp 0.25s ease-out forwards;
+}
+
+hr {
+	color: var(--text-color);
+}
+
+/* Layout */
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-self: center;
+	padding-bottom: 1rem;
+	text-align: center;
+	height: 100%;
+	gap: 2rem;
+	animation: fadeUp 0.25s ease-out forwards;
+}
+
+a {
+	color: var(--text-color);
+}
+
+/* =======================================
+   FOOTER
+======================================= */
+#footer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 1.25rem 1rem;
+	background: var(--card-bg-color);
+	border-top: 1px solid var(--text-color);
+	box-shadow: 5px 5px 5px var(--subtle-shadow);
+	transition: 0.15s ease;
+}
+
+#footer p {
+	font-size: 0.9rem;
+	color: var(--date-color);
+}
+
+#footer-links {
+	display: flex;
+	gap: 1.5rem;
+}
+
+#footer-links a {
+	font-weight: 300;
+}
+
+/* =======================================
+   Animations
+======================================= */
+@keyframes fadeUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px); /* starts slightly lower */
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0); /* ends in place */
+	}
+}

@@ -10,6 +10,8 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const PORT = 3000;
 
+const guests = [];
+
 // Set EJS as the view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -28,6 +30,14 @@ app.get("/", (req, res) => {
 // Define a contact root
 app.get("/contact", (req, res) => {
 	res.render("contact");
+});
+
+// Define a confirmation root
+app.post("/confirmation", (req, res) => {
+	const guest = req.body;
+	guests.push(guest);
+	console.log(guests);
+	res.render("confirmation");
 });
 
 // Start the server
