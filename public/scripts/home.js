@@ -25,6 +25,13 @@ document.querySelectorAll('#nav-list a[href^="#"]').forEach((link) => {
 	});
 });
 
+const hamburger = document.getElementById("hamburgerBtn");
+const navList = document.getElementById("nav-list");
+
+hamburger.addEventListener("click", () => {
+	navList.classList.toggle("show");
+});
+
 /* ------ Slideshow code ------ */
 // Change slide function
 function changeSlide(slideshowName, n) {
