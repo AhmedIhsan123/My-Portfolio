@@ -24,7 +24,7 @@
 					<div>
 						<div class="label-container">
 							<label for="fname">First name</label>
-							<span class="error" id="err-fname">*</span>
+							<span class="error" id="err-fname">* Missing First name</span>
 						</div>
 						<input type="text" id="fname" name="fname" />
 					</div>
@@ -33,7 +33,7 @@
 					<div>
 						<div class="label-container">
 							<label for="lname">Last name</label>
-							<span class="error" id="err-lname">*</span>
+							<span class="error" id="err-lname">* Missing last name</span>
 						</div>
 						<input type="text" id="lname" name="lname" />
 					</div>
@@ -42,7 +42,7 @@
 					<div>
 						<div class="label-container">
 							<label for="job-title">Job Title</label>
-							<span class="error" id="err-jtitle">*</span>
+							<span class="error" id="err-jtitle">* Missing title</span>
 						</div>
 						<input type="text" id="job-title" name="job-title" />
 					</div>
@@ -51,7 +51,7 @@
 					<div>
 						<div class="label-container">
 							<label for="company">Company</label>
-							<span class="error" id="err-company">*</span>
+							<span class="error" id="err-company">* Missing Company</span>
 						</div>
 						<input type="text" id="company" name="company" />
 					</div>
@@ -60,7 +60,9 @@
 					<div>
 						<div class="label-container">
 							<label for="linkedin">LinkedIn URL</label>
-							<span class="error" id="err-linkedin">*</span>
+							<span class="error" id="err-linkedin"
+								>* Must start with "www.linkedin.com/in/"</span
+							>
 						</div>
 						<input type="text" id="linkedin" name="linkedin" />
 					</div>
@@ -69,7 +71,9 @@
 					<div>
 						<div class="label-container">
 							<label for="email">Email Address</label>
-							<span class="error" id="err-email">*</span>
+							<span class="error" id="err-email"
+								>* Please enter a valid email address</span
+							>
 						</div>
 						<input type="email" id="email" name="email" />
 					</div>
@@ -81,7 +85,7 @@
 					<div id="meet-box">
 						<div class="label-container">
 							<label for="meet">How did we meet?</label>
-							<span class="error" id="err-meet">*</span>
+							<span class="error" id="err-meet">* Select a option</span>
 						</div>
 						<select name="meet" id="meet">
 							<option value="" selected disabled>Please select</option>
@@ -95,6 +99,7 @@
 					<div id="other-box">
 						<div class="label-container">
 							<label for="other">Other (please specify)</label>
+							<span class="error" id="err-other">* Field cannot be empty</span>
 						</div>
 						<input type="text" name="other" id="other" />
 					</div>

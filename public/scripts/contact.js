@@ -20,7 +20,7 @@ const formConfig = {
 		linkedin: {
 			ref: document.getElementById("linkedin"),
 			error: document.getElementById("err-linkedin"),
-			required: true,
+			required: false,
 		},
 		company: {
 			ref: document.getElementById("company"),
@@ -36,6 +36,11 @@ const formConfig = {
 			ref: document.getElementById("meet"),
 			error: document.getElementById("err-meet"),
 			required: true,
+		},
+		other: {
+			ref: document.getElementById("other"),
+			error: document.getElementById("err-other"),
+			required: false,
 		},
 		format: {
 			ref: [document.getElementById("html"), document.getElementById("text")],
@@ -101,6 +106,23 @@ formConfig.reference.onsubmit = () => {
 			isValid = false;
 		} else {
 			inputs.meet.error.style.visibility = "hidden";
+		}
+	}
+
+	// Set required for other textbox is other is selected
+	if (inputs.meet.ref.value == "other") {
+		inputs.other.required = true;
+	}
+
+	// Display error
+	if (inputs.other.required) {
+		if (inputs.other.ref.value.trim() == "") {
+			inputs.other.error.visibility = "visible";
+			console.log("1");
+			isValid = false;
+		} else {
+			console.log(22);
+			inputs.other.error.visibility = "hidden";
 		}
 	}
 
