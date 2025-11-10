@@ -18,7 +18,6 @@ body {
 	display: flex;
 	flex-direction: column;
 	gap: 4rem;
-	height: 100vh;
 	max-height: 100%;
 	background: var(--bg-color);
 	transition: background 0.3s ease, color 0.3s ease;
@@ -43,52 +42,6 @@ main {
 a {
 	color: var(--text-color);
 	text-decoration: none;
-}
-
-/* =======================================
-   NAVIGATION BAR
-======================================= */
-#header-container {
-	display: flex;
-	position: sticky;
-	align-self: center;
-	justify-self: center;
-	top: 2%;
-	width: min-content;
-	padding: 1.25rem 2rem;
-	background: var(--header-bg-color);
-	border-radius: 50px;
-	box-shadow: 0 0 15px var(--card-shadow);
-	backdrop-filter: blur(5px);
-	z-index: 9999;
-	transition: all 0.3s ease;
-}
-
-#nav-list {
-	display: flex;
-	list-style: none;
-	gap: 1rem;
-}
-
-#nav-list li a {
-	position: relative;
-	padding-bottom: 0.5rem;
-}
-
-#nav-list li a::after {
-	content: "";
-	position: absolute;
-	left: 50%;
-	bottom: 0;
-	width: 0;
-	height: 2px;
-	background: var(--text-color);
-	transform: translateX(-50%);
-	transition: 0.3s ease;
-}
-
-#nav-list li a:hover::after {
-	width: 100%;
 }
 
 /* Hover Glow */
@@ -203,8 +156,8 @@ select {
 }
 
 #basic-info {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	display: flex;
+	flex-direction: column;
 }
 
 #mail-check-container {
