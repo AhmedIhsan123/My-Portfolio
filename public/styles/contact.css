@@ -35,6 +35,7 @@ main {
 	padding-bottom: 1rem;
 	width: fit-content;
 	max-width: 90vw;
+	min-width: 50%;
 	height: 100%;
 	gap: 2rem;
 	animation: fadeUp 0.25s ease-out forwards;
@@ -246,11 +247,6 @@ button#submit-btn:hover {
 	main {
 		width: 90%;
 		gap: 1.5rem;
-	}
-
-	#header-container {
-		width: 90%;
-		padding: 1rem 1.5rem;
 	}
 
 	fieldset {

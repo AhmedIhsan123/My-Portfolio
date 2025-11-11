@@ -117,12 +117,11 @@ formConfig.reference.onsubmit = () => {
 	// Display error
 	if (inputs.other.required) {
 		if (inputs.other.ref.value.trim() == "") {
-			inputs.other.error.visibility = "visible";
-			console.log("1");
+			inputs.other.error.style.visibility = "visible";
 			isValid = false;
 		} else {
 			console.log(22);
-			inputs.other.error.visibility = "hidden";
+			inputs.other.error.style.visibility = "hidden";
 		}
 	}
 
