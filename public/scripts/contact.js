@@ -76,6 +76,13 @@ formConfig.reference.onsubmit = () => {
 		}
 	});
 
+	// Set linked in required state
+	if (inputs.linkedin.ref.value.trim() != "") {
+		inputs.linkedin.required = true;
+	} else {
+		inputs.linkedin.required = false;
+	}
+
 	// LinkedIn validation
 	if (inputs.linkedin.required) {
 		const linkedinStr = "www.linkedin.com/in/";

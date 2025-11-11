@@ -1,0 +1,103 @@
+body {
+	height: 100vh;
+	justify-content: space-between;
+}
+
+main {
+	width: 80%;
+}
+
+h1,
+p {
+	align-self: center;
+}
+
+/* =======================================
+   Table Styles
+======================================= */
+
+/* Make table full width */
+table.dataTable {
+	width: 100% !important;
+	border-collapse: collapse;
+	font-size: 15px;
+	color: #f2f2f2;
+}
+
+/* Header */
+table.dataTable thead th {
+	background-color: #1a1a1a;
+	color: #ffffff;
+	font-weight: 600;
+	padding: 12px;
+	border-bottom: 2px solid #333;
+	text-align: left;
+	white-space: nowrap;
+}
+
+/* Table Body Rows */
+table.dataTable tbody td {
+	padding: 10px;
+	border-bottom: 1px solid #333;
+}
+
+/* Hover Row */
+table.dataTable tbody tr:hover {
+	background-color: #222 !important;
+}
+
+/* Search box + Show entries dropdown */
+.dataTables_wrapper .dataTables_length select,
+.dataTables_wrapper .dataTables_filter input {
+	background-color: #111;
+	border: 1px solid #444;
+	color: #fff;
+	padding: 6px 8px;
+	border-radius: 6px;
+	outline: none;
+}
+
+/* Dropdown caret fix */
+.dataTables_length label,
+.dataTables_filter label {
+	color: #ddd;
+}
+
+/* Pagination */
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	color: #ffffff !important;
+	border-radius: 6px;
+	padding: 4px 10px;
+	border: 1px solid transparent;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current {
+	background: #444 !important;
+	border: 1px solid #666 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+	background: #555 !important;
+	border: 1px solid #777 !important;
+	color: #fff !important;
+	cursor: pointer;
+}
+
+/* Remove weird blue focus outlines */
+.dataTables_wrapper select:focus,
+.dataTables_wrapper input:focus {
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+/* Responsive child row styling */
+table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before {
+	background-color: #555 !important;
+}
+
+@media (max-width: 400px) {
+	main {
+		width: 100%;
+		align-self: unset;
+	}
+}

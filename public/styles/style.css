@@ -120,60 +120,6 @@ a {
 }
 
 /* =======================================
-   TABLE STYLES
-======================================= */
-table {
-	width: 100%;
-	border-collapse: collapse;
-	background: var(--card-bg-color);
-	color: var(--text-color);
-	box-shadow: 0 0 10px var(--subtle-shadow);
-	border-radius: 8px;
-	overflow: hidden;
-	transition: background 0.3s ease, color 0.3s ease;
-}
-
-thead {
-	background: rgba(255, 255, 255, 0.05);
-}
-
-thead th {
-	padding: 0.75rem 1rem;
-	text-align: left;
-	font-weight: 600;
-	border-bottom: 1px solid var(--subtle-shadow);
-}
-
-tbody td {
-	padding: 0.65rem 1rem;
-	border-bottom: 1px solid var(--subtle-shadow);
-}
-
-tbody tr:last-child td {
-	border-bottom: none;
-}
-
-/* Hover effect for rows */
-tbody tr:hover {
-	background: rgba(255, 255, 255, 0.08);
-	box-shadow: 0 0 10px var(--hover-shadow-1), 0 0 20px var(--hover-shadow-2);
-	transition: background 0.3s ease, box-shadow 0.3s ease;
-}
-
-/* Optional striped rows */
-tbody tr:nth-child(even) {
-	background: rgba(255, 255, 255, 0.02);
-}
-
-/* Table captions */
-caption {
-	padding: 0.5rem;
-	font-size: 0.9rem;
-	color: var(--date-color);
-	text-align: left;
-}
-
-/* =======================================
    FOOTER
 ======================================= */
 #footer {
