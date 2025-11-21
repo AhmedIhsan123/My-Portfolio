@@ -2,6 +2,11 @@
 import express, { application } from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+import mysql2 from "mysql2";
+
+// Configure dotenv
+dotenv.config();
 
 // Fix __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -9,6 +14,17 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = 3010;
+
+// Make a pool for the db
+const pool = mysql2
+	.createPool({
+		host: process.env.DB_HOST,
+		user: process.env.DB_USER,
+		password: process.env.DB_PASSWORD,
+		database: process.env.DB_NAME,
+		port: process.env.DB_PORT,
+	})
+	.promise();
 
 const guests = [];
 
