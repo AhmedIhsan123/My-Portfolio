@@ -72,9 +72,8 @@ app.post("/submit-form", async (req, res) => {
 		contact.meet || "",
 		contact.other || "",
 		contact.message || "",
-		(contact.mail_list = "on" ? true : false),
+		contact.mail_list === "on" ? true : false,
 		contact.mail_format || "",
-		contact.date || "",
 	];
 
 	try {
