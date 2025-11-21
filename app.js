@@ -55,11 +55,11 @@ app.get("/contact", (req, res) => {
 app.post("/submit-form", async (req, res) => {
 	// Create a JSON object to store contact data
 	const contact = req.body;
-	contact.date = "";
+	contact.date_created = new Date();
 
 	// Write a query to insert into the db
-	const sql = `INSERT INTO contacts (fname, lname, jTitle, company, linkedin, email, meetType, other, message, mailingList, mailingType)
-	VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
+	const sql = `INSERT INTO contacts (fname, lname, jTitle, company, linkedin, email, meetType, other, message, mailingList, mailingType, date_created)
+	VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`;
 
 	// Create an array of params for each placeholder
 	const params = [
@@ -74,7 +74,10 @@ app.post("/submit-form", async (req, res) => {
 		contact.message || "",
 		contact.mail_list === "on" ? true : false,
 		contact.mail_format || "",
+		contact.date_created,
 	];
+
+	console.log(params, contact);
 
 	try {
 		const [result] = await pool.execute(sql, params);
