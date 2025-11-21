@@ -26,7 +26,7 @@ const pool = mysql2
 	})
 	.promise();
 
-const guests = [];
+const contacts = [];
 
 // Set EJS as the view engine
 app.set("view engine", "ejs");
@@ -38,6 +38,9 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files (CSS, JS, images)
 app.use(express.static(path.join(__dirname, "public")));
 
+// Allow the use of JSON
+// app.use(express.json);
+
 // Define a default root
 app.get("/", (req, res) => {
 	res.render("home", { message: "Hello World!" });
@@ -48,18 +51,44 @@ app.get("/contact", (req, res) => {
 	res.render("contact");
 });
 
-// Define a confirmation root
-app.post("/confirmation", (req, res) => {
-	const guest = req.body;
-	guest.date = new Date();
-	guests.push(guest);
-	console.log(guests);
-	res.render("confirmation");
+// Define a submit-form route
+app.post("/submit-form", async (req, res) => {
+	// Create a JSON object to store contact data
+	const contact = req.body;
+	contact.date = new Date();
+
+	// Write a query to insert into the db
+	const sql = `INSERT INTO contacts (fname, lname, jTitle, company, linkedin, email, meetType, other, message, mailingList, mailingType)
+	VALUES (?,?,?,?,?,?,?,?,?,?,?)`;
+
+	// Create an array of params for each placeholder
+	const params = [
+		contact.fname,
+		contact.lname,
+		contact.job_title || "",
+		contact.company || "",
+		contact.linkedin || "",
+		contact.email || "",
+		contact.meet || "",
+		contact.other || "",
+		contact.message || "",
+		(contact.mail_list = "on" ? true : false),
+		contact.mail_format || "",
+	];
+
+	try {
+		const [result] = await pool.execute(sql, params);
+
+		// Send the user to the confirmation page
+		res.render("confirmation");
+	} catch (err) {
+		console.log("DB Error:", err);
+	}
 });
 
 // Define a admin root
 app.get("/admin", (req, res) => {
-	res.render("admin", { guests });
+	res.render("admin", { contacts });
 });
 
 // Start the server

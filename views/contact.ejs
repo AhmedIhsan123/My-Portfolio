@@ -17,7 +17,7 @@
 
 		<!-- Page main content -->
 		<main>
-			<form id="guest-form" action="confirmation" method="POST">
+			<form id="guest-form" action="submit-form" method="POST">
 				<legend>Lets connect...</legend>
 
 				<!-- Basic information fieldset -->
@@ -43,10 +43,10 @@
 					<!-- Job Title -->
 					<div>
 						<div class="label-container">
-							<label for="job-title">Job Title</label>
+							<label for="job_title">Job Title</label>
 							<span class="error" id="err-jtitle">* Missing title</span>
 						</div>
-						<input type="text" id="job-title" name="job-title" />
+						<input type="text" id="job-title" name="job_title" />
 					</div>
 
 					<!-- Company -->
@@ -120,8 +120,8 @@
 					<!-- Add to mailing -->
 					<div>
 						<div id="mail-check-container">
-							<label for="mail-list">Please add me to your mailing list!</label>
-							<input type="checkbox" id="mail-list" name="mail-list" />
+							<label for="mail_list">Please add me to your mailing list!</label>
+							<input type="checkbox" id="mail-list" name="mail_list" />
 						</div>
 
 						<!-- Email format -->
@@ -131,7 +131,7 @@
 								<label for="html"
 									><input
 										type="radio"
-										name="mail-format"
+										name="mail_format"
 										value="html"
 										id="html"
 										class="radio"
@@ -140,7 +140,7 @@
 								<label for="text"
 									><input
 										type="radio"
-										name="mail-format"
+										name="mail_format"
 										value="text"
 										id="text"
 										class="radio"
