@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Admin Panel</title>
+
 		<link rel="stylesheet" href="/styles/style.css" />
 		<link rel="stylesheet" href="/styles/admin.css" />
 		<link rel="icon" href="./Images/favicon.png" />
@@ -22,13 +23,17 @@
 		<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
 		<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
 	</head>
+
 	<body>
 		<%- include('partials/header') %>
+
 		<main>
 			<h1>Admin Panel</h1>
-			<% if (guests.length === 0) { %>
+
+			<% if (contacts.length === 0) { %>
 			<p>No submissions yet.</p>
 			<% } else { %>
+
 			<table id="guest-table" class="display nowrap" style="width: 100%">
 				<thead>
 					<tr>
@@ -44,42 +49,52 @@
 						<th>Date</th>
 					</tr>
 				</thead>
+
 				<tbody>
-					<% guests.forEach(guest => { %>
+					<% contacts.forEach(contact => { %>
 					<tr>
-						<td><%= guest.fname %></td>
-						<td><%= guest.lname %></td>
-						<td><%= guest['job-title'] || '—' %></td>
-						<td><%= guest.company || '—' %></td>
+						<td><%= contact.fname %></td>
+						<td><%= contact.lname %></td>
+						<td><%= contact['job-title'] || '—' %></td>
+						<td><%= contact.company || '—' %></td>
+
 						<td>
-							<% if (guest.linkedin) { %>
+							<% if (contact.linkedin) { %>
 							<a
-								href="<%= guest.linkedin.startsWith('http') ? guest.linkedin : 'https://' + guest.linkedin %>"
+								href="<%= contact.linkedin.startsWith('http') ? contact.linkedin : 'https://' + contact.linkedin %>"
 								target="_blank"
 								>LinkedIn</a
 							>
 							<% } else { %> — <% } %>
 						</td>
-						<td><%= guest.email || '—' %></td>
-						<td><%= guest.meet %></td>
-						<td><%= guest.other || '—' %></td>
-						<td><%= guest.message || '—' %></td>
-						<td><%= guest.date.toLocaleString() %></td>
+
+						<td><%= contact.email || '—' %></td>
+						<td><%= contact.meet %></td>
+						<td><%= contact.other || '—' %></td>
+						<td><%= contact.message || '—' %></td>
+
+						<!-- Safe date rendering -->
+						<td>
+							<%= contact.date_created ? contact.date_created.toLocaleString() :
+							'—' %>
+						</td>
 					</tr>
 					<% }); %>
 				</tbody>
 			</table>
+
 			<% } %>
 		</main>
-		<%- include('partials/footer') %>
-	</body>
 
-	<script>
-		$(document).ready(function () {
-			$("#guest-table").DataTable({
-				responsive: true,
-				pageLength: 10, // how many rows per page
+		<%- include('partials/footer') %>
+
+		<script>
+			$(document).ready(function () {
+				$("#guest-table").DataTable({
+					responsive: true,
+					pageLength: 10,
+				});
 			});
-		});
-	</script>
+		</script>
+	</body>
 </html>
