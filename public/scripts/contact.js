@@ -153,9 +153,9 @@ formConfig.inputs.meet.ref.addEventListener("change", () => {
 });
 
 // Mailing list checkbox
-document.getElementById("mail-list").addEventListener("change", () => {
+document.getElementById("mail_list").addEventListener("change", () => {
 	const emailBox = document.getElementById("email-format-box");
-	const checked = document.getElementById("mail-list").checked;
+	const checked = document.getElementById("mail_list").checked;
 
 	formConfig.inputs.email.required = checked;
 	formConfig.inputs.format.required = checked;

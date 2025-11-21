@@ -68,6 +68,7 @@ fieldset div {
 fieldset label {
 	font-size: 0.95rem;
 	color: var(--text-color);
+	user-select: none;
 }
 
 input[type="text"],
@@ -124,7 +125,7 @@ select {
 	display: none; /* hidden until user selects 'other' */
 }
 
-#mail-list {
+#mail_list {
 	margin-right: 0.5rem;
 }
 
